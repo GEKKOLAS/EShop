@@ -12,7 +12,7 @@ builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
 builder.Services.AddScoped<ThemeService>();
-
+builder.Services.AddRadzenComponents();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

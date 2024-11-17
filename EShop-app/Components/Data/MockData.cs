@@ -1,38 +1,8 @@
-﻿@page "/"
+﻿using static EShop_app.Components.Pages.ProductCatalog;
 
-<PageTitle>Home</PageTitle>
-
-<h3 style="text-align:center " class="rz-mt-6">Catalog of Products</h3>
-<RadzenDataGrid Data="@data">
-    <Columns>
-        <RadzenDataGridColumn Property="@nameof(Product.Id)" Title="ID" Width="50px" TextAlign="TextAlign.Center" />
-        <RadzenDataGridColumn Property="@nameof(Product.Name)" Title="First Name" />
-        <RadzenDataGridColumn Property="@nameof(Product.Description)" Title="Description" />
-        <RadzenDataGridColumn Property="@nameof(Product.Price)" Title="Price" />
-        <RadzenDataGridColumn Property="@nameof(Product.Category)" Title="Category" FormatString="{0:d}" />
-        <RadzenDataGridColumn Property="@nameof(Product.StockQuantity)" Title="StockQuantity" FormatString="{0:d}" />
-        <RadzenDataGridColumn Property="@nameof(Product.ImageUrl)" Title="ImageUrl" />
-    </Columns>
-</RadzenDataGrid>
-
-@code {
-
-    public class Product
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public decimal Price { get; set; }
-        public string? Category { get; set; }
-        public int StockQuantity { get; set; }
-        public bool IsAvailable { get; set; }
-        public string? ImageUrl { get; set; }
-        public DateTime DateAdded { get; set; }
-    }
-
-    public static class ProductData
-    {
-        public static List<Product> Products = new List<Product>
+  public static class ProductData
+{
+    public static List<Product> Products = new List<Product>
     {
         new Product
         {
@@ -215,13 +185,4 @@
             DateAdded = DateTime.Now.AddDays(-45)
         }
     };
-    }
-    string emptyText = "No Items to display!";
-    List<Product> data = new List<Product>();
-
-    protected override void OnInitialized()
-    {
-        data = ProductData.Products;
-        base.OnInitialized();
-    }
 }

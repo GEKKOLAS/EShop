@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop-app", "EShop-app\EShop-app.csproj", "{2A158FD2-6C6C-4878-A86D-20F4F47623AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop-app", "EShop-app\EShop-app.csproj", "{2A158FD2-6C6C-4878-A86D-20F4F47623AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
