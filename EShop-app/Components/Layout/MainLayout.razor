@@ -19,16 +19,17 @@
     <RadzenSidebar Responsive="true" Style="width: max-content">
         <RadzenPanelMenu DisplayStyle="@(sidebarExpanded ? MenuItemDisplayStyle.IconAndText : MenuItemDisplayStyle.Icon)" ShowArrow="false">
             <NavLink>
-                <RadzenPanelMenuItem Text="Catalog" Icon="home" Target="productcatalog" />
-
-
+                <RadzenPanelMenuItem Text="Catalog" Icon="home" Path="ProductCatalog" />
             </NavLink>
-          
-            <RadzenPanelMenuItem Text="Dashboard" Icon="dashboard" Target="/Dashboard" />
-            <RadzenPanelMenuItem Text="Landing Page" Icon="auto_awesome" Target="/LandingPage">
-                <RadzenPanelMenuItem Text="Themes" Icon="color_lens" />
-                <RadzenPanelMenuItem Text="Colors" Icon="invert_colors" />
-            </RadzenPanelMenuItem>
+          <NavLink>
+                <RadzenPanelMenuItem Text="Dashboard" Icon="dashboard" Path="/Dashboard" />
+          </NavLink>
+           <NavLink>
+                <RadzenPanelMenuItem Text="Landing Page" Icon="auto_awesome" Path="/LandingPage">
+                    <RadzenPanelMenuItem Text="Themes" Icon="color_lens" />
+                    <RadzenPanelMenuItem Text="Colors" Icon="invert_colors" />
+                </RadzenPanelMenuItem>
+           </NavLink>
         </RadzenPanelMenu>
     </RadzenSidebar>
     <RadzenBody>

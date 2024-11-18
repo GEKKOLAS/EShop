@@ -1,12 +1,17 @@
-﻿@page "/"
+﻿@page "/ProductCatalog"
+@using System.Linq.Dynamic.Core
+@rendermode InteractiveAuto
 
 <PageTitle>Home</PageTitle>
 
 <h3 style="text-align:center " class="rz-mt-6">Catalog of Products</h3>
+
+
+
 <RadzenDataGrid Data="@data"
-                AllowFiltering="true"  AllowColumnResize="true" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced"
-                AllowGrouping="true" AllowSorting="true" AllowPaging="true"  PageSize="5" PagerHorizontalAlign="HorizontalAlign.Left"
-                ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" ShowPagingSummary="true" onclick=@NextPage
+                AllowFiltering="true"  AllowColumnResize="true" FilterMode="FilterMode.Advanced"
+                AllowGrouping="true" AllowSorting="true" AllowPaging="true"  PageSize="10" PagerHorizontalAlign="HorizontalAlign.Left"
+                ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" ShowPagingSummary="true"
                
                 
                 class="mt-2">
@@ -46,7 +51,7 @@
         public DateTime DateAdded { get; set; }
     }
 
-    string emptyText = "No Items to display!";
+
     List<Product> data = new List<Product>();
 
     protected override void OnInitialized()
@@ -55,10 +60,26 @@
         base.OnInitialized();
     }
 
-    private void NextPage()
+
+    string pagingSummaryFormat = "Displaying page {0} of {1} <b>(total {2} records)</b>";
+
+   
+
+
+
+    async Task NextPage()
     {
-        
+        await NextPage();
     }
+    async Task TenthPage()
+    {
+        await TenthPage();
+    }
+    async Task LastPage()
+    {
+        await LastPage();
+    }
+
 
    
 
